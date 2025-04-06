@@ -56,5 +56,4 @@ disease_db = {
         },
         "preventions": ["Pneumococcal vaccine", "Quit smoking", "Good hygiene"]
     }
-    # Add more diseases as needed
 }

@@ -4,7 +4,7 @@ const symptomSuggestions = [
     "shortness of breath", "chest pain", "body aches", "sore throat", "dizziness",
     "sensitivity to light", "increased thirst", "frequent urination", "blurred vision"
 ];
-const API_URL = "http://localhost:5000"; // Ensure this matches your backend
+const API_URL = "http://localhost:5000"; 
 
 function addMessage(text, from, isError = false, isLoading = false) {
     const chatBox = document.getElementById("chatBox");

@@ -20,9 +20,9 @@ def diagnose(symptoms_data):
                 matches += 1
                 base_score = details["weight"]
                 if details["severe_threshold"] and user_symptoms[symptom]["severity"] >= details["severe_threshold"]:
-                    score += base_score * 1.5  # Boost for severe symptoms
+                    score += base_score * 1.5  
                 elif details["duration_concern"] and user_symptoms[symptom]["duration"] >= details["duration_concern"]:
-                    score += base_score * 1.2  # Boost for prolonged duration
+                    score += base_score * 1.2  
                 else:
                     score += base_score
         if matches >= 2 and score > max_score:
