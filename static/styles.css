@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    background: #0288d1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #0277bd;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+#toggleSidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#toggleSidebar:hover {
+    transform: rotate(90deg);
+}
+
+.main-content {
+    display: flex;
+    height: 65vh;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 25px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+.sidebar {
+    width: 0;
+    background: #eceff1;
+    padding: 0;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+}
+
+.sidebar.active {
+    width: 300px;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #0288d1;
+}
+
+#historyContent {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.message {
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 25px;
+    max-width: 80%;
+    line-height: 1.5;
+    animation: fadeSlide 0.4s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.message.bot {
+    background: #e8f0fe;
+    color: #333;
+}
+
+.message.user {
+    background: #0288d1;
+    color: white;
+    margin-left: auto;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-area {
+    display: flex;
+    padding: 20px;
+    background: #f5f5f5;
+    border-top: 1px solid #eee;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    font-size: 1.1em;
+}
+
+.input-area input:focus {
+    border-color: #0288d1;
+}
+
+.input-area button {
+    padding: 15px 30px;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.input-area button:hover {
+    background: #0277bd;
+}
+
+.symptom-form {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.symptom-form h3 {
+    margin-bottom: 15px;
+    color: #0288d1;
+}
+
+.symptom-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.symptom-form button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.symptom-form button:hover {
+    background: #0277bd;
+}
+
+.chat-box::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb {
+    background: #0288d1;
+    border-radius: 5px;
+}
+
+.chat-box::-webkit-scrollbar-track, .sidebar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
